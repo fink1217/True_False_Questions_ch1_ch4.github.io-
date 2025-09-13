@@ -1,7 +1,7 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="zh-Hant"><head><meta charset="utf-8">
 <title>True/False Ch1–Ch4 中英對照</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <style>
   :root{--bg:#f6f7fb;--ink:#111;--muted:#555;--card:#fff;--accent:#2b6cb0}
   html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Noto Sans TC,Microsoft JhengHei,Arial,sans-serif}
@@ -30,6 +30,31 @@
   window.MathJax = {tex: {inlineMath: [['\\(','\\)'], ['$', '$']]}, svg: {fontCache: 'global'}};
 </script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<!-- Mobile UX Enhancements: viewport, math, print button styles -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+<style>
+  html { font-size: clamp(16px, 2.5vw, 18px); }
+  body { line-height: 1.6; -webkit-text-size-adjust: 100%; }
+  .mjx-container { font-size: clamp(1.05em, 2.6vw, 1.25em) !important; }
+  .mjx-container [style*="white-space:nowrap"] { white-space: normal !important; }
+  .mjx-container mjx-mrow { display: inline-block; max-width: 100%; overflow-wrap: anywhere; }
+  .print-btn {
+    position: fixed; right: 16px; bottom: 16px;
+    width: 56px; height: 56px; min-width: 44px; min-height: 44px;
+    border-radius: 999px; border: none; cursor: pointer;
+    background: #1f6feb; color: #fff; font-size: 22px; line-height: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2); z-index: 1000;
+  }
+  .print-btn:active { transform: scale(0.98); }
+  @media (max-width: 480px) { .print-btn { width: 64px; height: 64px; font-size: 24px; right: 14px; bottom: 14px; } }
+  @media print { .print-btn { display: none !important; } }
+</style>
+<script>
+  window.MathJax = {
+    chtml: { scale: 1.1, linebreaks: { automatic: true, width: 'container' } },
+    svg:   { scale: 1.1, linebreaks: { automatic: true, width: 'container' } }
+  };
+</script>
 </head><body>
 <div class="container">
 <h1>True/False Questions (Ch1–Ch4) 中英對照</h1>
@@ -1057,4 +1082,8 @@
 </div>
 
 </div>
+<button class="print-btn" id="printBtn" aria-label="列印">🖨️</button>
+<script>
+  document.getElementById('printBtn')?.addEventListener('click', () => window.print());
+</script>
 </body></html>
