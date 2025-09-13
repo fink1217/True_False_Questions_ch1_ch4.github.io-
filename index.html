@@ -1,0 +1,1060 @@
+﻿<!doctype html>
+<html lang="zh-Hant"><head><meta charset="utf-8">
+<title>True/False Ch1–Ch4 中英對照</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{--bg:#f6f7fb;--ink:#111;--muted:#555;--card:#fff;--accent:#2b6cb0}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,Segoe UI,Noto Sans TC,Microsoft JhengHei,Arial,sans-serif}
+  .container{max-width:1100px;margin:24px auto;padding:0 16px}
+  h1{font-size:22px;margin:8px 0 16px}
+  .card{background:var(--card);border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.06);padding:14px;margin:12px 0;border:1px solid #e5e7eb}
+  .qnum{font-weight:800;color:#1f2937;margin-bottom:6px}
+  .row{display:grid;grid-template-columns:1fr;gap:10px}
+  .sec h3{font-size:14px;margin:4px 0;color:#0f172a}
+  .en,.zh{white-space:pre-wrap}
+  .ans{font-weight:700;margin:6px 0}
+  .ans .pill{display:inline;font-size:20px;margin-right:0}
+  .ans .pill.true{color:#16a34a}
+  .ans .pill.false{color:#dc2626}
+  .exp{color:var(--muted)}
+  .toolbar{display:flex;gap:10px;align-items:center;margin:8px 0 18px}
+  .btn{background:var(--accent);color:#fff;border:none;border-radius:8px;padding:10px 14px;font-size:14px;cursor:pointer}
+  .btn:hover{filter:brightness(.95)}
+  @media print{.toolbar{display:none}.container{max-width:100%;padding:0 10mm}.card{break-inside:avoid;page-break-inside:avoid;border:1px solid #ddd;box-shadow:none}h1{font-size:16pt}}
+</style>
+<script>
+  function toPDF(){ window.print(); }
+</script>
+<!-- MathJax for inline LaTeX like \( ... \) and $$ ... $$ -->
+<script>
+  window.MathJax = {tex: {inlineMath: [['\\(','\\)'], ['$', '$']]}, svg: {fontCache: 'global'}};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head><body>
+<div class="container">
+<h1>True/False Questions (Ch1–Ch4) 中英對照</h1>
+<div class="toolbar"><button class="btn" onclick="toPDF()">列印 / 匯出 PDF</button></div>
+
+<div class="card">
+<div class="qnum">Q1</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Maximum Likelihood Estimation (MLE) chooses parameters that maximize the probability of the observed data.</div>
+<div class="zh">最大似然估計（MLE）會選擇使觀測資料機率最大的參數。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">MLE finds θ that maximizes \( p(X \mid \theta) \).</div>
+<div class="exp">MLE 找到能使 \( p(X \mid \theta) \) 最大的參數 θ。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q2</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">The log-likelihood is often used instead of likelihood because it avoids numerical underflow and simplifies derivatives.</div>
+<div class="zh">對數似然常被用來取代似然，因為它能避免數值下溢並簡化微分。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Log converts products to sums and stabilizes computation.</div>
+<div class="exp">對數會把乘積轉為加總，並讓計算更穩定。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q3</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">For a Bernoulli distribution, the MLE of the success probability p is the sum of successes divided by the sample size.</div>
+<div class="zh">對於伯努利分布，成功機率 p 的 MLE 是成功次數除以樣本數。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">\( \hat{p} = \frac{\sum x_t}{N} \).</div>
+<div class="exp">\( \hat{p} = \frac{\sum x_t}{N} \)，也就是樣本中的成功比例。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q4</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">In a multinomial distribution, the probabilities p_i estimated by MLE must sum to less than 1.</div>
+<div class="zh">在多項分布中，MLE 估計得到的各類別機率 p_i 總和必須小於 1。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">They must sum to exactly 1.</div>
+<div class="exp">各類別機率的總和必須正好等於 1。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q5</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">For a Gaussian distribution, the MLE of the mean is the sample mean.</div>
+<div class="zh">對於高斯分布，平均數的 MLE 就是樣本平均值。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">\( \hat{\mu} = \frac{1}{N} \sum x_t \).</div>
+<div class="exp">\( \hat{\mu} = \frac{1}{N} \sum x_t \)，也就是樣本均值。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q6</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">For a Gaussian distribution, the MLE of variance is biased because it divides by N−1.</div>
+<div class="zh">對於高斯分布，MLE 的變異數估計有偏，因為它除以 N−1。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">MLE divides by N. Using N−1 gives the unbiased estimator.</div>
+<div class="exp">MLE 的分母是 N；用 N−1 才是不偏估計。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q7</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Bias measures the difference between the expected value of an estimator and the true parameter.</div>
+<div class="zh">偏差（Bias）是估計量的期望值與真實參數的差距。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Bias = \( E[\hat{\theta}] - \theta \).</div>
+<div class="exp">偏差定義為 \( E[\hat{\theta}] - \theta \)。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q8</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Variance measures the squared difference between the estimator and the true parameter.</div>
+<div class="zh">變異數衡量估計量與真實參數的平方差。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Variance measures deviation from the estimator’s mean, not from the true parameter.</div>
+<div class="exp">變異數衡量的是估計量與其平均值的偏離程度，而非與真實參數的差距。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q9</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Mean squared error (MSE) can be decomposed into Bias² plus Variance.</div>
+<div class="zh">均方誤差（MSE）可以分解為偏差平方加上變異數。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">\( MSE = Bias^2 + Variance \).</div>
+<div class="exp">\( MSE = Bias^2 + Variance \)。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q10</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Maximum a Posteriori (MAP) estimation includes prior information, unlike MLE.</div>
+<div class="zh">最大後驗估計（MAP）會納入先驗資訊，不同於 MLE。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">MAP maximizes \( p(\theta \mid X) \), incorporating priors.</div>
+<div class="exp">MAP 最大化 \( p(\theta \mid X) \)，而 MLE 最大化 \( p(X \mid \theta) \)。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q11</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">In Bayesian estimation, the posterior mean is always equal to the MAP estimate.</div>
+<div class="zh">在貝葉斯估計中，後驗平均值總是等於 MAP。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Only under symmetric posteriors with specific priors (e.g., Gaussian).</div>
+<div class="exp">只有在對稱的後驗分布且具有特定先驗（如高斯分布）時才會相等。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q12</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Parametric classification assumes a distributional form for each class.</div>
+<div class="zh">參數式分類假設每個類別的分布形式。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">For example, Gaussian class-conditional densities.</div>
+<div class="exp">例如，高斯條件分布。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q13</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">When two Gaussian classes have equal variances, the decision boundary lies halfway between their means.</div>
+<div class="zh">當兩個高斯類別具有相同變異數時，決策邊界位於均值的中點。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Equal variance leads to a linear boundary at midpoint.</div>
+<div class="exp">相同變異數會使邊界落在均值的中點並呈線性。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q14</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Increasing model complexity always reduces both bias and variance.</div>
+<div class="zh">增加模型複雜度總會同時降低偏差與變異數。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Bias decreases but variance increases → bias-variance dilemma.</div>
+<div class="exp">偏差會下降，但變異數會上升 → 偏差-變異數困境。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q15</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Cross-validation helps measure a model’s training error.</div>
+<div class="zh">交叉驗證幫助衡量模型的訓練誤差。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It measures generalization error using unseen data.</div>
+<div class="exp">它實際上衡量的是泛化誤差，用的是未見過的資料。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q16</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Bayes’ rule combines prior, likelihood, and evidence to compute the posterior probability.</div>
+<div class="zh">貝葉斯法則結合先驗、似然和證據來計算後驗機率。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Posterior = (Likelihood × Prior) / Evidence.</div>
+<div class="exp">後驗 = (似然 × 先驗) / 證據。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q17</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">In a binary classification problem, predicting the more probable class minimizes the 0/1 loss.</div>
+<div class="zh">在二分類問題中，預測機率較大的類別可最小化 0/1 損失。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Under 0/1 loss, minimum risk corresponds to maximum posterior probability.</div>
+<div class="exp">在 0/1 損失下，最小風險對應於最大後驗機率。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q18</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">The prior probability depends on the observed data.</div>
+<div class="zh">先驗機率依賴於觀測資料。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">The prior is independent of the data; it reflects beliefs before seeing data.</div>
+<div class="exp">先驗機率與資料無關，它是在觀測之前的信念。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q19</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">When K > 2 classes, Bayes’ decision rule is to choose the class with the maximum posterior probability.</div>
+<div class="zh">當 K > 2 類時，貝葉斯決策規則是選擇後驗機率最大的類別。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Argmax rule applies for multiple classes.</div>
+<div class="exp">Argmax 規則適用於多類情況。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q20</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Expected risk is the average loss over all possible states, weighted by their posterior probabilities.</div>
+<div class="zh">期望風險是所有可能狀態下的平均損失，依後驗機率加權。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">\( R(\alpha \mid x) = \sum_k \lambda(\alpha \mid C_k) P(C_k \mid x) \).</div>
+<div class="exp">\( R(\alpha \mid x) = \sum_k \lambda(\alpha \mid C_k) P(C_k \mid x) \)。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q21</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">In 0/1 loss, the loss is 1 for correct classification and 0 for misclassification.</div>
+<div class="zh">在 0/1 損失下，分類正確的損失是 1，錯誤的損失是 0。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It is 0 if correct, 1 if misclassified.</div>
+<div class="exp">正確分類時損失是 0，錯誤分類時損失是 1。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q22</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Introducing a “reject option” allows the system to avoid making risky decisions when posterior probabilities are uncertain.</div>
+<div class="zh">引入「拒判選項」可以在後驗機率不確定時避免高風險決策。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Reject is chosen if all posterior probabilities are too close or below threshold.</div>
+<div class="exp">當所有後驗機率都過於接近或低於門檻時，可選擇拒判。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q23</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">With unequal losses, the decision rule is still to choose the class with maximum posterior probability.</div>
+<div class="zh">當損失不相等時，決策規則仍然只需選擇後驗機率最大的類別。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">With unequal losses, the rule is to minimize expected risk, not just maximize posterior.</div>
+<div class="exp">在不等損失下，決策應該最小化期望風險，而不是單純選最大後驗。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q24</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Discriminant functions provide a convenient way to implement Bayes’ decision rule.</div>
+<div class="zh">判別函數提供了一種方便的方法來實現貝葉斯決策規則。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Class is assigned to the region with the maximum discriminant function.</div>
+<div class="exp">分類會被指派到判別函數值最大的區域。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q25</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">For two classes, the discriminant can be expressed as the log odds of the posterior probabilities.</div>
+<div class="zh">對於二分類，判別函數可以寫成後驗機率的對數勝算。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">\( g(x) = \log \frac{P(C_1 \mid x)}{P(C_2 \mid x)} \).</div>
+<div class="exp">判別函數公式為 \( g(x) = \log \frac{P(C_1 \mid x)}{P(C_2 \mid x)} \)。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q26</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">If losses are equal for all misclassifications, the Bayes classifier reduces to the MAP rule.</div>
+<div class="zh">若所有誤分類損失相等，貝葉斯分類器簡化為 MAP 規則。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Under equal 0/1 loss, choose the class with maximum posterior.</div>
+<div class="exp">在相等的 0/1 損失下，選擇最大後驗機率的類別。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q27</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">The Bayes classifier always guarantees zero classification error.</div>
+<div class="zh">貝葉斯分類器總能保證零分類錯誤。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It minimizes error, but cannot eliminate it if class distributions overlap.</div>
+<div class="exp">它能最小化錯誤，但若類別分布有重疊，錯誤率仍大於 0。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q28</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Utility theory is a generalization of risk minimization where the goal is to maximize expected utility.</div>
+<div class="zh">效用理論是風險最小化的推廣，目標是最大化期望效用。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Risk uses losses, utility theory uses gains.</div>
+<div class="exp">風險是以損失衡量，效用理論則以收益為基礎。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q29</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">In Bayesian decision theory, evidence p(x) depends on the choice of class.</div>
+<div class="zh">在貝葉斯決策理論中，證據 \(p(x)\) 依賴於所選類別。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Evidence \( p(x) = \sum_k p(x \mid C_k) P(C_k) \) is independent of decision.</div>
+<div class="exp">證據 \( p(x) = \sum_k p(x \mid C_k) P(C_k) \)，與決策無關。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q30</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">A dichotomizer refers to a classifier with more than two classes.</div>
+<div class="zh">dichotomizer 指的是能處理多於兩類的分類器。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Dichotomizer is for two classes; polychotomizer is for K > 2.</div>
+<div class="exp">dichotomizer 是二類分類器，若 K > 2 則稱為 polychotomizer。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q31</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Supervised learning requires labeled training data, where each input has a corresponding output label.</div>
+<div class="zh">監督式學習需要標記的訓練資料，每個輸入都有對應的輸出標籤。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">By definition, supervised learning uses input-output pairs.</div>
+<div class="exp">根據定義，監督式學習使用輸入—輸出配對。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q32</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Positive and negative examples in classification refer to correctly and incorrectly classified instances.</div>
+<div class="zh">在分類中，正例和反例分別指正確與錯誤分類的樣本。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">They mean belonging or not belonging to the target class, not correctness of prediction.</div>
+<div class="exp">它們指的是是否屬於目標類別，而不是預測是否正確。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q33</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">A hypothesis class defines the set of all candidate functions the learner can choose from.</div>
+<div class="zh">假設空間定義了學習器可選的候選函數集合。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">H is the space of possible hypotheses.</div>
+<div class="exp">H 是所有可能假設的空間。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q34</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">The version space consists of all hypotheses in H that are consistent with the training data.</div>
+<div class="zh">版本空間包含假設空間中所有與訓練資料一致的假設。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Consistent hypotheses agree with all labeled examples.</div>
+<div class="exp">一致的假設必須與所有標記樣本相符。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q35</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Margin in classification refers to the number of misclassified points.</div>
+<div class="zh">分類中的 margin 指的是被錯分的樣本數。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Margin is the distance between data points and the decision boundary.</div>
+<div class="exp">間隔是樣本點到決策邊界的距離。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q36</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">A larger margin generally improves generalization and robustness to noise.</div>
+<div class="zh">較大的 margin 一般能提升泛化能力並增強對雜訊的穩健性。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Thats why SVM aims for maximum margin.</div>
+<div class="exp">這就是為什麼 SVM 追求最大間隔。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q37</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Occam’s Razor suggests preferring more complex models because they fit training data better.</div>
+<div class="zh">奧卡姆剃刀原則建議偏好更複雜的模型，因為它能更好地擬合訓練資料。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It recommends choosing simpler models if performance is comparable.</div>
+<div class="exp">它建議在表現相近時選擇更簡單的模型。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q38</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Overfitting occurs when the hypothesis class is too simple compared to the true concept.</div>
+<div class="zh">當假設空間過於簡單時會發生過擬合。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">That describes underfitting. Overfitting happens when the model is too complex.</div>
+<div class="exp">那描述的是欠擬合；過擬合發生在模型太複雜時。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q39</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Learning problems are ill-posed without inductive bias, since multiple hypotheses can explain the data.</div>
+<div class="zh">如果沒有歸納偏好，學習問題是不適定的，因為多個假設都能解釋資料。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Bias is needed to select one solution.</div>
+<div class="exp">需要偏差來選擇唯一解。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q40</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Increasing hypothesis complexity always decreases generalization error.</div>
+<div class="zh">增加假設複雜度一定會降低泛化誤差。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Error decreases first, but then increases due to overfitting (bias-variance trade-off).</div>
+<div class="exp">誤差會先下降，但之後因過擬合而上升（偏差-變異數權衡）。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q41</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Cross-validation helps estimate generalization error by testing models on unseen data subsets.</div>
+<div class="zh">交叉驗證透過在未使用於訓練的資料子集上測試模型，來估計泛化誤差。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Validation/test sets mimic unseen data.</div>
+<div class="exp">驗證/測試集模擬未見過的資料。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q42</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">In k-fold cross-validation, the dataset is divided into k parts and each part is used once as validation.</div>
+<div class="zh">在 k 折交叉驗證中，資料被劃分成 k 份，每份都會正好一次作為驗證集。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">This ensures efficient use of limited data﹒</div>
+<div class="exp">這確保了有限資料的有效利用﹒</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q43</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Mean Squared Error (MSE) is commonly used as the loss function in regression tasks.</div>
+<div class="zh">在回歸任務中，均方誤差（MSE）常被用作損失函數。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">MSE measures squared deviation between predictions and true values.</div>
+<div class="exp">MSE 衡量預測值與真實值之間的平方偏差。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q44</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Underfitting means the hypothesis class is too complex, leading to poor training performance.</div>
+<div class="zh">欠擬合表示假設空間過於複雜，導致訓練效果差。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Underfitting means the model is too simple to capture patterns.</div>
+<div class="exp">欠擬合是因為模型太簡單。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q45</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Model selection is about choosing the best hypothesis class or model complexity to balance fit and generalization.</div>
+<div class="zh">模型選擇是為了選出最佳的假設空間或複雜度，以平衡擬合與泛化。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">The goal is to achieve good predictive performance on new data.</div>
+<div class="exp">目標是在新資料上達到良好的預測表現。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q46</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Pattern recognition is mainly concerned with tasks such as image, speech, and text classification.</div>
+<div class="zh">模式識別主要關注於影像、語音和文字的分類任務。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">PR originated from signal processing and pattern classification.</div>
+<div class="exp">模式識別起源於訊號處理與模式分類。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q47</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Machine learning is restricted to recognition tasks and does not include prediction or generation.</div>
+<div class="zh">機器學習僅限於辨識任務，不包含預測或生成。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">ML generalizes to prediction, reinforcement learning, generative models, etc.</div>
+<div class="exp">機器學習推廣到預測、強化學習、生成模型等。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q48</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Face verification is the problem of deciding whether two images belong to the same person.</div>
+<div class="zh">人臉驗證是判斷兩張圖片是否屬於同一個人。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It compares image pairs, unlike identification.</div>
+<div class="exp">它比較影像對，不同於識別。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q49</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Face detection aims to determine the identity of the face in an image.</div>
+<div class="zh">人臉檢測的目標是判斷人臉的身份。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Detection only finds the location of faces, not identity.</div>
+<div class="exp">偵測只找出人臉的位置，而不是身份。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q50</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Identification compares an unknown face against a database and finds the closest match.</div>
+<div class="zh">識別（Identification）是將未知的人臉與資料庫比對，找出最接近的匹配。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Identification/retrieval matches unknowns to knowns.</div>
+<div class="exp">識別/檢索將未知與已知進行匹配。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q51</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Pattern recognition typically relies more on handcrafted feature design, while machine learning often employs automatic feature learning.</div>
+<div class="zh">模式識別通常較依賴人工設計特徵，而機器學習則常用自動特徵學習。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">ML (esp﹒ deep learning) reduces manual feature engineering.</div>
+<div class="exp">機器學習（特別是深度學習）減少了手動特徵工程。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q52</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Template matching is a classic example of machine learning.</div>
+<div class="zh">模板匹配是機器學習的一個典型例子。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It is a traditional PR technique without learning capability.</div>
+<div class="exp">它是一種沒有學習能力的傳統模式識別技術。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q53</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Support Vector Machines (SVMs) and k-NN can be used in both pattern recognition and machine learning contexts.</div>
+<div class="zh">支持向量機（SVM）和 k 最近鄰（k-NN）既可用於模式識別，也可用於機器學習。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">They are shared techniques across both fields.</div>
+<div class="exp">它們是兩個領域共享的技術。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q54</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">The decision boundary in classification divides the input space into regions assigned to different classes.</div>
+<div class="zh">在分類任務中，決策邊界將輸入空間劃分成不同的類別區域。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It separates low-risk vs high-risk, or class labels in general.</div>
+<div class="exp">它將低風險與高風險區分開來，或更一般地，區分類別標籤。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q55</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Regression tasks predict continuous values rather than discrete categories.</div>
+<div class="zh">回歸任務預測的是連續值，而不是離散類別。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Examples include predicting house prices or steering angle.</div>
+<div class="exp">例如房價預測或自駕車轉向角度的估計。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q56</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Regression models cannot handle multiple outputs simultaneously.</div>
+<div class="zh">回歸模型不能同時處理多個輸出。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Multi-output regression (e.g., robot arm joint angles) is possible.</div>
+<div class="exp">多輸出回歸是可行的（例如：機器手臂關節角度）。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q57</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Supervised learning is unsuitable for prediction tasks.</div>
+<div class="zh">監督式學習不適合用來做預測。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">Prediction is one of its main purposes.</div>
+<div class="exp">預測是其主要目的之一。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q58</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Unsupervised learning does not require labeled outputs and is often used for clustering.</div>
+<div class="zh">非監督式學習不需要標記輸出，常用於分群。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It finds structure in unlabeled data.</div>
+<div class="exp">它在未標記資料中發現結構。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q59</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Response surface design in regression refers to approximating nonlinear relationships between inputs and outputs for optimization.</div>
+<div class="zh">回歸中的響應面設計是用來近似輸入與輸出間的非線性關係，以利最佳化。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill true">⭕︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It models and optimizes complex response functions.</div>
+<div class="exp">它對複雜的響應函數進行建模與最佳化。</div>
+</div>
+</div>
+<div class="card">
+<div class="qnum">Q60</div>
+<div class="sec">
+<h3>原文題目</h3>
+<div class="en">Outlier detection can be considered an application of supervised learning.</div>
+<div class="zh">離群點偵測可以被視為監督式學習的應用。</div>
+</div>
+<div class="sec">
+<h3>答案</h3>
+<div class="ans"><span class="pill false">❌︎</span></div>
+</div>
+<div class="sec">
+<h3>Explanation</h3>
+<div class="exp">It is often unsupervised, since anomalies lack labeled training examples.</div>
+<div class="exp">它通常是非監督式的，因為異常點缺乏標記的訓練樣本。</div>
+</div>
+</div>
+
+</div>
+</body></html>
